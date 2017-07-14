@@ -1,0 +1,86 @@
+//variables
+
+$color-primary: #272727;
+$color-secondary: #747474;
+$color-heading: #14A76C;
+$color-text: #FF652F;
+$header-text: 'Montserrat', sans-serif;
+$body-text: 'Rubik', sans-serif;
+
+//Mixins
+
+@mixin header-style {
+  font-family: $header-text;
+  color: $color-heading;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+@mixin body-style {
+  font-family: $body-text;
+  color: $color-text;
+  background-color: $color-primary;
+  text-align: center;
+}
+
+@mixin input-style {
+  font-size: 2em; 
+  border-radius: 10px;
+  margin-left: 4em;
+  margin-top: 1.4em;
+}
+
+@mixin button-style {
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 2em;
+  font-family: $body-text;
+}
+
+@mixin black-out-style {
+  color: $color-secondary;
+  background-color: $color-primary;
+  border-color: $color-secondary;
+}
+
+//CSS Declarations
+h1 {
+  @include header-style;
+}
+
+body {
+  @include body-style;
+}
+div {
+  margin-left: 40%;
+}
+ul {
+  list-style: square;
+  font-size: 2em;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+#addItem {
+  @include input-style;
+  @include black-out-style;
+}
+
+#addItem:focus {
+  outline:none;
+}
+
+#submit {
+  @include button-style;
+  @include black-out-style;
+}
+
+#remove {
+  @include button-style;
+  @include black-out-style;
+}
+
+.button:focus {
+  outline:none;
+}
